@@ -1,0 +1,16 @@
+name: FlaskTodo2 CI Test
+
+on:
+  push:
+    braches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Hello World
+        run: echo "Hello from my FlaskTodo2 workflow!" 
