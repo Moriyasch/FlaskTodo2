@@ -12,5 +12,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Hello World
-        run: echo "Hello from my FlaskTodo2 workflow!" 
+      - name: Set up Docker Compose
+        run: docker compose version
+
+      - name: Run Test with Docker Compose
+        run: |
+          docker compose up --build --abort-on-container-exit --exit-code-from tets
+          docker compose down
+ 
